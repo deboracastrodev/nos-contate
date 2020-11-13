@@ -8,6 +8,7 @@ import VueRouter from 'vue-router';
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 import VueSweetalert2 from 'vue-sweetalert2';
+import { VueMaskDirective } from "v-mask";
 
 import 'sweetalert2/dist/sweetalert2.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -18,6 +19,8 @@ import {routes} from './routes';
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 Vue.use(VueSweetalert2); //alerts for resquest response
+
+Vue.directive("mask", VueMaskDirective);
 
 
 const router = new VueRouter({

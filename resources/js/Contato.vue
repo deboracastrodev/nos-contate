@@ -12,8 +12,8 @@
                 <small class="text-danger" v-for="(error, index) in errors.email" :key="index">{{ error }}</small>
             </div>
             <div class="form-group">
-                <label for="contatoTelefone">Telefone</label>
-                <input type="text" v-model="contato.telefone" class="form-control" id="contatoTelefone" placeholder="(99) 99999-9999">
+                <label for="contatoTelefone">Celular</label>
+                <input type="text" v-model="contato.telefone" class="form-control" id="contatoTelefone" maxlength="15" placeholder="(99) 99999-9999" v-mask="mask" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$">
                 <small class="text-danger" v-for="(error, index) in errors.telefone" :key="index">{{ error }}</small>
             </div>
             <div class="form-group">
@@ -42,6 +42,7 @@
                 contato: {
                     arquivo: null
                 },
+                mask: "(##) #####-####",
                 errors: [],
             }
         },
