@@ -1,36 +1,38 @@
 <template>
-    <div class="offset-col-2 col-lg-8">
+<div class="row justify-content-md-center">
+    <div class="shadow-sm p-3 mb-5 bg-white rounded col-lg-8">
         <form @submit.prevent="enviarContato" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="contatoNome">Nome</label>
-                <input type="text" v-model="contato.nome"  class="form-control" id="contatoNome" placeholder="Informe seu nome">
+                <input type="text" v-model="contato.nome"  class="form-control" id="contatoNome" placeholder="Informe seu nome" required>
                 <small class="text-danger" v-for="(error, index) in errors.nome" :key="index">{{ error }}</small>
             </div>
             <div class="form-group">
                 <label for="contatoEmail">E-mail</label>
-                <input type="email" v-model="contato.email" class="form-control" id="contatoEmail" placeholder="Informe seu e-mail">
+                <input type="email" v-model="contato.email" class="form-control" id="contatoEmail" placeholder="Informe seu e-mail" required>
                 <small class="text-danger" v-for="(error, index) in errors.email" :key="index">{{ error }}</small>
             </div>
             <div class="form-group">
                 <label for="contatoTelefone">Celular</label>
-                <input type="text" v-model="contato.telefone" class="form-control" id="contatoTelefone" maxlength="15" placeholder="(99) 99999-9999" v-mask="mask" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$">
+                <input type="text" v-model="contato.telefone" class="form-control" id="contatoTelefone" maxlength="15" placeholder="(99) 99999-9999" v-mask="mask" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" required>
                 <small class="text-danger" v-for="(error, index) in errors.telefone" :key="index">{{ error }}</small>
             </div>
             <div class="form-group">
                 <label for="contatoMensagem">Mensagem</label>
-                <textarea v-model="contato.mensagem" class="form-control" id="contatoMensagem" placeholder="Escreva sua mensagem"></textarea>
+                <textarea v-model="contato.mensagem" class="form-control" id="contatoMensagem" placeholder="Escreva sua mensagem" required></textarea>
                 <small class="text-danger" v-for="(error, index) in errors.mensagem" :key="index">{{ error }}</small>
             </div>
             <div class="form-group">
                 <label for="contatoArquivo">Arquivo</label>
-                <input type="file" class="form-control" id="file" aria-describedby="arquivoHelp" ref="file" v-on:change="handleFileUpload()">
+                <input type="file" class="form-control" id="file" aria-describedby="arquivoHelp" ref="file" v-on:change="handleFileUpload()" required>
                 <small id="arquivoHelp" class="form-text text-muted">Arquivos até no máximo 500kb.</small>
                 <small class="text-danger" v-for="(error, index) in errors.arquivo" :key="index">{{ error }}</small>
 
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-outline-success btn-lg btn-block">Enviar</button>
         </form>
     </div>
+</div>
 </template>
 
 <script>

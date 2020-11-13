@@ -1,6 +1,6 @@
 <template>
-    <footer class="">
-            <div class="">
+    <footer class="row justify-content-lg-center">
+            <div class="col-lg-8">
                 <small>by Débora Castro</small>
             </div>
     </footer>
