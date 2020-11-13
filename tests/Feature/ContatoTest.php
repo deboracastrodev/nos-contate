@@ -132,7 +132,7 @@ class ContatoTest extends TestCase
     /** @test */
     public function valida_campo_arquivo_formato_invalido()
     {
-        $file = UploadedFile::fake()->create('document.pdf', 'image/png')->size(501);
+        $file = UploadedFile::fake()->create('document.png', 'image/png')->size(400);
 
         $contato = Contato::factory()->make(['arquivo' => $file]);
 
