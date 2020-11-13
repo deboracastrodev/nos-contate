@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contato;
 use App\Http\Requests\ContatoRequest;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\DadosContato;
 
 class ContatoController extends Controller
 {
@@ -24,6 +26,8 @@ class ContatoController extends Controller
         );
 
         $contato->save();
+
+        Mail::to(config('mail.to.address'))->send(new DadosContato($contato));
 
         return response()->json('Contato enviado com sucesso!');
     }

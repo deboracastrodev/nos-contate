@@ -88,6 +88,12 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+
+    'to' => [
+        'address' => env('MAIL_RECEIVED', 'deboracastro.pm@gmail.com'),
+        'name' => 'Dados contato'
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Markdown Mail Settings
