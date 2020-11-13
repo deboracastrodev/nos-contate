@@ -42,3 +42,9 @@ SPA com formulário para captura de contato.
 - Instanciar interface
     - npm install && npm run dev
 
+- Iniciar server da aplicação
+    - php artisan serve
+
+## Testes
+- Para iniciar os testes
+    - php artisan test
