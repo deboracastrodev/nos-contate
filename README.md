@@ -1,5 +1,5 @@
-### nos-contate
-SPA para contato
+## Aplicação Nos Contate
+SPA com formulário para captura de contato.
 
 ## Requisitos
 

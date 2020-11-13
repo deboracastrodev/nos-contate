@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contato;
+use App\Http\Requests\ContatoRequest;
 
 class ContatoController extends Controller
 {
-    public function store(Request $request)
+    public function store(ContatoRequest $request)
     {
         $path = $request->file('arquivo')->store('arquivos');
         
